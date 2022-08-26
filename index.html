@@ -14,22 +14,80 @@
 }
 /* style untuk elemen body */
 body {
-	background-color: rgba(0,0,30,.15);
+	background-color: rgba(0,0,30);
+	background-attachment: fixed;
+	background-image: url('bgc.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	filter: contrast(115%);
 	min-height: 100vh;
+	overflow: hidden;
 	position: relative;
 	width: 100%;
 }
 /* style untuk elemen form */
 form {
-	background-color: rgba(0,0,30,.65);
+	background-color: rgba(0,0,30,.75);
 	border: 2px outset #666;
 	border-radius: 2px;
 	box-shadow: 0 0 0 1px rgba(0,0,0), 1px 3px 3px rgba(0,0,0,.5), 2px 3px 10px 1px rgba(0,0,0,.35);
-	margin: 25vw auto;
+	left: 50%;
 	max-width: 480px;
-	padding: 10px;
-	position: relative;
+	padding: 10px 7px 1px;
+	position: absolute;
+	top: 150px;
+	transform: translate(-50%,0);
 	width: 95%;
+	z-index: 15;
+}
+form .bgtl {
+  background: transparent;
+  background-attachment: fixed;
+  background-image: url('bgtl.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  filter: contrast(90%) drop-shadow(0 0 1px black);
+  height: 145px;
+  left: -15px;
+  position: absolute;
+  top: -148px;
+  width: 105px;
+  z-index: 10;
+}
+form .bgtc {
+  background: transparent;
+  background-attachment: fixed;
+  background-image: url('bgtc.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  filter: contrast(90%) drop-shadow(0 0 1px black);
+  height: 140px;
+  position: absolute;
+  right: 80px;
+  top: -143px;
+  width: 130px;
+  z-index: 10;
+}
+form .bgtr {
+  background: transparent;
+  background-attachment: fixed;
+  background-image: url('bgtr.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  filter: contrast(90%) drop-shadow(0 0 1px black);
+  height: 155px;
+  position: absolute;
+  right: -10px;
+  top: -158px;
+  width: 80px;
+  z-index: 10;
 }
 /* style untuk input display atau layar utama */
 input#layar {
@@ -39,10 +97,10 @@ input#layar {
 	box-shadow: 0 0 0 1px rgba(222,222,222);
 	display: block;
 	font-family: times new roman;
-	font-size: 2em;
+	font-size: 2.25em;
 	font-weight: 500;
-	height: 50px;
-	line-height: 50px;
+	height: 60px;
+	line-height: 60px;
 	outline-style: none;
 	padding: 0 10px;
 	text-align: right;
@@ -52,14 +110,15 @@ input#layar {
 .row {
 	display: flex;
 	margin: 1px 0;
-	padding: 1px 5px;
+	padding: 1px 2px;
 	position: relative;
 	text-align: center;
 }
 /* style untuk area atau bagian atas kalkulator */
 .row.icon {
 	display: inline-block;
-	padding: 0;
+	margin-bottom: 2px;
+	padding: 0 3px;
 	width: 100%;
 }
 /* style untuk area teks pojok kiri atas kalkulator */
@@ -113,16 +172,16 @@ input#layar {
 	box-shadow: 0 0 0 1px rgba(0,0,0,.75), 1px 1px 3px rgba(0,0,0,.75);
 	color: rgba(222,222,222);
 	font-size: 1.25em;
-	height: 40px;
-	line-height: 40px;
-	margin: 5px 1.5%;
+	height: 50px;
+	line-height: 50px;
+	margin: 1.5px 1.75% 2.5%;
 	opacity: 1;
 	transform: scale(1);
 	width: 100%;
 }
 /* style untuk tombol ketika diklik dan dijalankan di javascript */
 .row button.hover {
-	animation: scale 100ms;
+	animation: scale 1000ms;
 }
 /* style untuk setiap tombol pertama di setiap baris */
 .row button:nth-child(1) {
@@ -176,6 +235,9 @@ input#layar {
 <body>
 <!-- mulai form html -->
 <form autocomplete="off" id="form_calc">
+  <div class="bgtl"></div>
+  <div class="bgtc"></div>
+  <div class="bgtr"></div>
   <div class="row icon">
 <!-- area teks pojok kiri atas -->
     <span class="by">Kalkulator<br>By Atakana.Com</span>
